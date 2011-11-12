@@ -1,0 +1,11 @@
+
+validation:
+http://www.aozora.jp/tools/checker.cgi
+を使ってチェックする。
+ClientFormとかつかうかな？
+=> mechanizeというものがでていた。
+
+JIS 0208の範囲に入って入れば良い。
+なのでencodingは関係ないはず。
+
+
