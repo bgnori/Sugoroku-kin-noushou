@@ -46,7 +46,7 @@ clean:
 	python validate.py < $< > $@
 
 %.ok: %.html
-	python check.py -s $< -o $@
+	python check.py $< -o $@
 
 $(TARGET): $(STEM:=.ok)
 	cat $(STEM:=.ok) > $@
