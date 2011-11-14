@@ -20,13 +20,16 @@ soup = BeautifulSoup(f.read())
 f.close()
 
 result = soup.find('pre')
-found = result.find('font')
+found = None
+while not found:
+  found = result.find('font')
+  for name, value in found.attrs:
+    if name == u'color' and value == 'red':
+      print found
+      sys.exit(1)
+  found = None
 
-if found:
-  print found
-  sys.exit(1)
-
-f = file(dst)
-f.write(result.text)
+f = file(dst, 'w')
+f.write(result.text.encode('utf8'))
 f.close()
 
